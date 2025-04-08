@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What are your chances</title>
+</head>
+<body>
+    <h1>Can you get into your dream college?</h1><br>
+    <h3>Enter some details</h3><br>
+    <form method="POST" action="/">
+
+        <label for="cgpa">CGPA:</label>
+        <input type="number" id="cgpa" name="cgpa" required>
+
+        <label for="gre">GRE Score:</label>
+        <input type="number" id="gre" name="gre" required>
+
+        <label for="toefl">TOEFL Score:</label>
+        <input type="number" id="toefl" name="toefl" value="0">
+
+        <label for="lor">Letter Of Recommendation Score (out of 5)</label>
+        <input type="number" id="lor" name="lor" required>
+
+        <label for="uniRating">University Rating</label>
+        <select id="uniRating" name="uniRating" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <p>Research Experience:</p>
+            <input type="radio" id="research_yes" name="research" value="1" required>
+            <label for="research_yes">Yes</label><br>
+
+            <input type="radio" id="research_no" name="research" value="0">
+            <label for="research_no">No</label><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <div class="prediction">
+            <h3>Your Prediction</h3>
+            <h2>{{ prediction }}</h2>
+        </div>
+    {% endif %}
+</body>
+</html>
