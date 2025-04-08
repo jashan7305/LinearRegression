@@ -9,7 +9,7 @@ def home():
         print("Request method is POST")
         cgpa = request.form.get("cgpa")
         gre = request.form.get("gre")
-        toefl = request.form.get("toefl")
+        toefl = float(request.form.get("toefl"))
         lor = request.form.get("lor")
         uni_rating = request.form.get("uniRating")
         research = request.form.get("research")
